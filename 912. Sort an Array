@@ -1,0 +1,10 @@
+https://leetcode.com/problems/sort-an-array/
+//Given an array of integers nums, sort the array in ascending order.
+
+
+sort(nums.begin(),nums.end());  
+    return nums;
+    
+    
+ Runtime: 44 ms
+Memory Usage: 28.3 MB
