@@ -1,0 +1,18 @@
+https://leetcode.com/problems/reverse-integer/
+//Description:Given a signed 32-bit integer x, return x with its digits reversed. 
+//If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+
+int x=abs(n); long result=0;
+while(x)
+        {
+    result=result*10+x%10;
+    x/=10;    
+        }
+if(result>INT_MAX ||result<INT_MIN) 
+    return 0;
+return (n<0)?-result:result;
+        
+        
+Runtime: 4 ms
+Memory Usage: 5.9 MB
