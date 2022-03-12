@@ -1,0 +1,20 @@
+https://leetcode.com/problems/powx-n/
+//Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
+
+
+double res=1;
+int i=abs(n);
+while(i>0){
+	if(i&1)
+ 		res*=x;
+	x*=x;
+	i>>=1;
+        }
+if(n<0)
+	return (1/res);
+else
+	return res;
+	
+	
+//Runtime: 0 ms
+//Memory Usage: 5.8 MB
