@@ -1,0 +1,12 @@
+https://leetcode.com/problems/single-number/
+//Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+
+int uni=0;
+for(auto i=nums.begin();i!=nums.end();i++)
+      uni^=(*i);
+return uni;
+
+
+Runtime: 16 ms
+Memory Usage: 16.9 MB
