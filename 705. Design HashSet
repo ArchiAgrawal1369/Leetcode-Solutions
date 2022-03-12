@@ -1,0 +1,37 @@
+https://leetcode.com/problems/design-hashset/
+/*  Design a HashSet without using any built-in hash table libraries.
+  Implement MyHashSet class:
+    void add(key) Inserts the value key into the HashSet.
+    bool contains(key) Returns whether the value key exists in the HashSet or not.
+    void remove(key) Removes the value key in the HashSet. 
+    If key does not exist in the HashSet, do nothing.
+*/
+
+
+class MyHashSet {
+public:
+   int pos,j,a[10000];
+    MyHashSet() {
+pos=0;
+}
+    void add(int key) {
+       a[pos]=key; pos++;
+    }
+    
+    void remove(int key) {
+for(j=pos-1;j>=0;j--)
+   if(a[j]==key)
+      { while(j<pos-1)
+       {a[j]=a[j+1];j++;}
+        pos--; }
+  }
+bool contains(int key) {
+ for(j=pos-1;j>=0;j--)
+     if(a[j]==key) return true;
+ return false;
+    }
+};
+
+
+Runtime: 144 ms
+Memory Usage: 39.2 MB
