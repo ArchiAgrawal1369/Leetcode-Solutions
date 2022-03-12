@@ -1,0 +1,14 @@
+https://leetcode.com/problems/sum-of-two-integers/
+//Given two integers a and b, return the sum of the two integers without using the operators + and -.
+
+
+while(b!=0) 
+       {
+       unsigned carry=a&b;
+        a^=b; b=carry<<1;
+        }
+return a;
+
+
+Runtime: 0 ms
+Memory Usage: 5.9 MB
