@@ -1,0 +1,18 @@
+https://leetcode.com/problems/find-the-duplicate-number/
+
+//Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+//There is only one repeated number in nums, return this repeated number.
+//You must solve the problem without modifying the array nums and uses only constant extra space.
+
+
+int i;
+auto copy=nums;
+sort(copy.begin(), copy.end());
+for(i=0;i<copy.size()-1;i++)
+       if (copy[i]==copy[i+1])
+               break;
+return copy[i];
+
+
+Runtime: 222 ms
+Memory Usage: 63.8 MB
