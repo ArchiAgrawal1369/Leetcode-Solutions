@@ -1,0 +1,19 @@
+https://leetcode.com/problems/palindrome-number/
+
+//Given an integer x, return true if x is palindrome integer.
+//An integer is a palindrome when it reads the same backward as forward.
+
+
+if(x<0) return false;
+int p=x;
+long reverse=0;
+while(x>0)
+         {
+         reverse= reverse*10+x%10;
+          x/=10;
+          }
+return (reverse==p)? true:false;
+
+
+Runtime: 12 ms
+Memory Usage: 5.7 MB
