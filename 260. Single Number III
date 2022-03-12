@@ -1,0 +1,21 @@
+https://leetcode.com/problems/single-number-iii/
+//Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. 
+//Find the two elements that appear only once. You can return the answer in any order.
+
+
+long uni=0, temp=0,newsum=0;
+int pos=0;
+for (int i=0; i<nums.size(); i++)  
+        uni^=nums[i];
+newsum=uni;
+vector <int> v(2,0);
+for(;(uni&1)!=1;uni>>=1,pos++);     
+    for(auto y: nums)
+        if (((y>>pos)&1)==1)
+            temp^=y;
+v[0]=(int)temp; v[1] = (int)(temp^newsum);
+return v;
+
+
+Runtime: 8 ms
+Memory Usage: 9.9 MB
