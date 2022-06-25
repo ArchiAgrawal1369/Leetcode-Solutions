@@ -1,0 +1,22 @@
+https://leetcode.com/problems/roman-to-integer/
+//Given a roman numeral, convert it to an integer.
+
+class Solution {
+public:
+    int romanToInt(string s) {
+    
+     map <char,int>roman;
+roman={{'I',1},{'V',5},{'X',10},{'L',50}, {'C',100},{'D',500},{'M',1000}};
+    int sum=roman[s.back()];
+for(auto i=s.rbegin()+1,j=s.rbegin();i!=s.rend();i++,j++)
+        { if(roman[*i]>=roman[*j])
+          sum+=roman[*i];
+         else
+          sum-=roman[*i];
+ 
+} return sum;
+    }
+};
+
+Runtime: 11 ms
+Memory Usage: 8.2 MB
