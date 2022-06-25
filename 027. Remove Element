@@ -1,0 +1,18 @@
+https://leetcode.com/problems/remove-element/
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+      
+          auto i=nums.begin();
+while(i!=nums.end())
+{if (*i==val)
+       { nums.erase(i); i--;}
+i++;}
+  return nums.size();  
+    }
+};
+
+Runtime: 4 ms
+Memory Usage: 8.8 MB
