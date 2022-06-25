@@ -1,0 +1,17 @@
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+//Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. 
+//The relative order of the elements should be kept the same.
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+ for (auto i=nums.begin()+1;i!=nums.end();i++)
+     if(*i==*(i-1))
+         {nums.erase(i);
+         i--;}
+ return nums.size();
+    }
+};
+
+Runtime: 516 ms
+Memory Usage: 18.5 MB
