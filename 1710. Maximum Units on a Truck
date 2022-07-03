@@ -1,0 +1,31 @@
+https://leetcode.com/problems/maximum-units-on-a-truck/
+//Return the maximum total number of units that can be put on the truck.
+
+class Solution {
+   public:
+
+ static bool check(const vector<int> &v1,const vector<int> &v2){
+
+    return v1[1]<v2[1];  
+  }  
+int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
+    
+sort(boxTypes.begin(), boxTypes.end(),check);
+           
+    int i=boxTypes.size()-1,units=0;
+    while(truckSize>0 && i>=0)
+    {   
+        if(boxTypes[i][0]<=truckSize)
+            units+=boxTypes[i][0]*boxTypes[i][1];
+        else
+            units+=truckSize*boxTypes[i][1];
+        
+        truckSize=truckSize-boxTypes[i][0]; 
+        i--;
+    }
+        return units;
+        }
+};
+
+Runtime: 49 ms
+Memory Usage: 15.9 MB
