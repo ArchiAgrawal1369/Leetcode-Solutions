@@ -1,0 +1,29 @@
+https://leetcode.com/problems/longest-consecutive-sequence/
+//Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+
+if(nums.size()<2) return nums.size();
+sort(nums.begin(), nums.end());
+int maxs=0, local=0;
+for(int i=0; i<nums.size()-1;i++)
+  {  if(nums[i+1]==nums[i]+1)
+         local++;
+     else if(nums[i+1]==nums[i])
+         continue;
+     else
+    {    maxs=max(local+1,maxs);
+         local=0;       
+    }  
+  }
+
+return max(local+1,maxs);
+    
+}        
+};
+
+
+Runtime: 85 ms
+Memory Usage: 33.8 MB
